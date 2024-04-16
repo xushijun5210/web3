@@ -4,7 +4,7 @@ def getSHA256Str(string,num):
     start_time = time.time()
     nonce1 = 0
     while True:
-        nonce1 = nonce1 + 1
+        nonce1 += 1
         str2 = string + str(nonce1)
         hash_value = hashlib.sha256(str2.encode("utf-8")).hexdigest()
         print(hash_value)

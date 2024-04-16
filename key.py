@@ -6,7 +6,7 @@ import rsa
 def getSHA256Str(string, num):
     nonce1 = 0
     while True:
-        nonce1 = nonce1 + 1
+        nonce1 += 1
         str2 = string + str(nonce1)
         hash_value = hashlib.sha256(str2.encode("utf-8")).hexdigest()
         if hash_value.startswith('0' * num):
