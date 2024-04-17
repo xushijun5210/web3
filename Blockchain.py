@@ -211,7 +211,8 @@ def mine():
     )
 
     # 通过将新块添加到链中来锻造它
-    block = blockchain.new_block(proof)
+    # proof = int(proof)
+    block = blockchain.new_block(proof, None)
 
     response = {
         'message': "New Block Forged",
@@ -223,7 +224,7 @@ def mine():
     return jsonify(response), 200
 
 
-# 返回整个区块链
+# 查看所有块的信息
 @app.route('/chain', methods=['GET'])
 def full_chain():
     response = {
